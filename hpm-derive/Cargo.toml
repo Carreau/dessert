@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Matthias Bussonnier <bussonniermatthias@gmail.com>"]
 
 [dependencies]
-syn = {version = "0.12", feature=["full", "extra-traits"]}
+syn = {version = "0.12", features=["derive", "extra-traits"]}
 quote = "0.4.2"
 
 [lib]

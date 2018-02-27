@@ -3,6 +3,8 @@ extern crate syn;
 #[macro_use]
 extern crate quote;
 
+use syn::MetaList;
+use syn::Meta::List;
 
 use proc_macro::TokenStream;
 
@@ -12,13 +14,19 @@ fn impl_hello_world(ast: &syn::DeriveInput) -> quote::Tokens {
 
     let opt_attr = ast.attrs.get(0);
 
+    println!("ATTRS:: {:?}", &ast.attrs);
+
     let it = match opt_attr {
         Some(ref attr) => Some(attr.interpret_meta()),
         None => None
 
     };
 
-    println!("IM: {:?}", it);
+
+    if let Some(Some(List(x))) = it {
+        println!("IM: {:?}", x.nested);
+        
+    }
     
 
     //println!(">> {:?}", opt_attr.unwrap().tts);
