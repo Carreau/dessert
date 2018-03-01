@@ -8,7 +8,7 @@ extern crate serde_derive;
 
 use serde::Deserialize;
 
-trait HPM {
+trait ViaDeserialize {
     //fn hpm() -> ();
 }
 
@@ -17,7 +17,7 @@ struct B {
     val: usize,
 }
 
-#[derive(HPM, Debug)]
+#[derive(ViaDeserialize, Debug)]
 #[via(B)]
 struct FrenchToast {
     a: usize,

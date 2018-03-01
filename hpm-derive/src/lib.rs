@@ -51,9 +51,7 @@ fn impl_hello_world(ast: &syn::DeriveInput) -> quote::Tokens {
     println!("Qname is {}", &qname);
 
     let impl_block = quote! {
-            impl HPM for #name {
-           //     fn hpm()->(){ }
-            };
+            impl ViaDeserialize for #name { };
     };
 
     let impl_block_2 = quote! {
@@ -89,7 +87,7 @@ fn impl_hello_world(ast: &syn::DeriveInput) -> quote::Tokens {
     generated
 }
 
-#[proc_macro_derive(HPM, attributes(via))]
+#[proc_macro_derive(ViaDeserialize, attributes(via))]
 pub fn hello_world(input: TokenStream) -> TokenStream {
     // Construct a string representation of the type definition
     
