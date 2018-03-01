@@ -6,6 +6,7 @@ trait HPM {
 }
 
 #[derive(HPM)]
+#[via(B)]
 struct FrenchToast;
 
 #[derive(HPM)]
