@@ -2,6 +2,9 @@
 name = "dessert-derive"
 version = "0.1.0"
 authors = ["Matthias Bussonnier <bussonniermatthias@gmail.com>"]
+license = "MIT"
+description = "see the Dessert crate"
+repository = "https://github.com/carreau/dessert"
 
 [dependencies]
 syn = {version = "0.12", features=["derive", "extra-traits"]}
