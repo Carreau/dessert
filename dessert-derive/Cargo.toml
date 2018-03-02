@@ -1,5 +1,5 @@
 [package]
-name = "hpm-derive"
+name = "dessert-derive"
 version = "0.1.0"
 authors = ["Matthias Bussonnier <bussonniermatthias@gmail.com>"]
 

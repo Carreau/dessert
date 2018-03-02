@@ -1,25 +1,25 @@
 [[package]]
-name = "dtoa"
-version = "0.4.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[[package]]
-name = "hpm"
+name = "dessert"
 version = "0.1.0"
 dependencies = [
- "hpm-derive 0.1.0",
+ "dessert-derive 0.1.0",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.10 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
-name = "hpm-derive"
+name = "dessert-derive"
 version = "0.1.0"
 dependencies = [
  "quote 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "syn 0.12.13 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
+
+[[package]]
+name = "dtoa"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "itoa"
@@ -28,7 +28,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "num-traits"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -83,7 +83,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "dtoa 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "itoa 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -128,7 +128,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [metadata]
 "checksum dtoa 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "09c3753c3db574d215cba4ea76018483895d7bff25a31b49ba45db21c48e50ab"
 "checksum itoa 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "8324a32baf01e2ae060e9de58ed0bc2320c9a2833491ee36cd3b4c414de4db8c"
-"checksum num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e7de20f146db9d920c45ee8ed8f71681fd9ade71909b48c3acbd766aa504cf10"
+"checksum num-traits 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "0b3c2bd9b9d21e48e956b763c9f37134dc62d9e95da6edb3f672cacb6caf3cd3"
 "checksum proc-macro2 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "cd07deb3c6d1d9ff827999c7f9b04cdfd66b1b17ae508e14fe47b620f2282ae0"
 "checksum quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)" = "7a6e920b65c65f10b2ae65c831a81a073a89edd28c7cce89475bff467ab4167a"
 "checksum quote 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "1eca14c727ad12702eb4b6bfb5a232287dcf8385cb8ca83a3eeaf6519c44c408"

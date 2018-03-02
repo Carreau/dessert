@@ -16,7 +16,6 @@ fn impl_hello_world(ast: &syn::DeriveInput) -> quote::Tokens {
     let mut qname: syn::Ident = syn::Ident::from("nothing");
     let mut tname: syn::Ident = syn::Ident::from("temp");
 
-    println!("ATTRS:: {:?}", &ast.attrs);
     for attr in ast.attrs.iter() {
         if let Some(List(list)) = attr.interpret_meta() {
             for tpl in list.nested.iter(){
@@ -27,16 +26,12 @@ fn impl_hello_world(ast: &syn::DeriveInput) -> quote::Tokens {
             }
         }
 
-        //println!("Path {:?}", attr.path);
 
         let &syn::Path{ref segments, ..} = &attr.path;
         {
-            //println!("Looping segments {:?}", segments);
             for tpl in segments.iter(){
                 let &syn::PathSegment{ref ident, ..} = tpl;
-                //println!("Testing ident {:?}", ident );
                 if ident.to_string() == "via"{
-                    //println!("Moving Qname");
                     qname = tname.to_owned();
                 }
             }
@@ -48,7 +43,6 @@ fn impl_hello_world(ast: &syn::DeriveInput) -> quote::Tokens {
 
 
 
-    println!("Qname is {}", &qname);
 
     let impl_block = quote! {
             impl ViaDeserialize for #name { };
@@ -74,17 +68,15 @@ fn impl_hello_world(ast: &syn::DeriveInput) -> quote::Tokens {
     };
 
     
-    let generated = quote! {
+    quote! {
         #[allow(non_upper_case_globals, unused_attributes, unused_qualifications)]
         const _WAHT: () = {
             extern crate serde as _serde;
             #impl_block_2
             #impl_block
         };
-    };
+    }
 
-    println!("{:?}", generated);
-    generated
 }
 
 #[proc_macro_derive(ViaDeserialize, attributes(via))]

@@ -1,16 +1,13 @@
 #[macro_use]
-extern crate hpm_derive;
+extern crate dessert_derive;
+extern crate dessert;
 extern crate serde;
 extern crate serde_json;
 
 #[macro_use]
 extern crate serde_derive;
 
-use serde::Deserialize;
-
-trait ViaDeserialize {
-    //fn hpm() -> ();
-}
+use dessert::ViaDeserialize;
 
 #[derive(Deserialize)]
 struct B {
@@ -30,9 +27,6 @@ impl From<B> for FrenchToast {
 }
 
 fn main() {
-    let f = FrenchToast { a: 1 };
-    //let b:B = f.into();
     let v: FrenchToast = serde_json::from_str("{\"val\":1}").unwrap();
     println!("{:?}", v)
-    //Waffles::hpm();
 }
