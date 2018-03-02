@@ -1,6 +1,6 @@
 # Desert 
 
-The cherry on the cake (on top of [SerDe]) to simplify custom `serialize` and `deserialize` traits. 
+The cherry on the cake (on top of [SerDe](https://serde.rs/)) to simplify custom `serialize` and `deserialize` traits. 
 
 ## Why
 
@@ -11,7 +11,7 @@ With dessert you just need to create an intermediate struct and the From/Into tr
 
 You can run examples with `$cargo run --examples demo`
 
-```
+```rust
 #[macro_use]
 extern crate dessert_derive;
 extern crate dessert;

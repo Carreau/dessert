@@ -1,8 +1,9 @@
 [package]
 name = "dessert"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Matthias Bussonnier <bussonniermatthias@gmail.com>"]
 description = "A impler way of writing Serde custom serialize and deserialise traits."
+readme = "readme.md"
 license = "MIT"
 repository = "https://github.com/carreau/dessert"
 
