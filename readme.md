@@ -1,3 +1,17 @@
+# Desert 
+
+The cherry on the cake (on top of [SerDe]) to simplify custom `serialize` and `deserialize` traits. 
+
+## Why
+
+Writing visitor/deserialise and serialize traits can be quite annoying, and sometime you just know how to transform your struct(s) into another form that suits your need. 
+With dessert you just need to create an intermediate struct and the From/Into traits to convert to it, and tell dessert to use this struct as an intermediate.
+
+## example:
+
+You can run examples with `$cargo run --examples demo`
+
+```
 #[macro_use]
 extern crate dessert_derive;
 extern crate dessert;
@@ -33,3 +47,7 @@ fn main() {
     println!("Serialized form: {}", serialized_string);
     println!("Debug format : {:?}", v)
 }
+
+// Serialized form: {"val":"Butter"}
+// Debug format : FrenchToast { ingredient: "Butter" }
+```
