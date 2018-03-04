@@ -4,6 +4,8 @@
 //! Manually, define an intermediate struct/enum as well as the From and/or Into traits necessary.
 //! Desert will take care of generating the Serialize/Deserialize traits for you.
 //!
+//! ## De-Serialise
+//!
 //! For example, de-serialising by renaming a field:
 //!
 //! ```rust, ignore
@@ -34,6 +36,42 @@
 //! ```
 //!
 //! You can use `cargo run --example deserialise` for a full working examples
+//!
+//! ## Serialise
+//!
+//! The struct you want to serialise must implement `Clone` (looking at lifting this restriction)
+//! and should implement `Into<Intermediate>`. `Intermediate` must implement serde's `Serialize`.
+//!
+//! Use `#[derive(ViaSerialize)]` and
+//! `#[via(Intermediate)]` to automatically derive the serde `Serialise` trait.
+//!
+//! ```rust, ignore
+//! // proc_macro can't be tested in documentation  comments.
+//! use dessert::ViaSerialize;
+//! 
+//! #[derive(ViaSerialize, Clone,  Debug)]
+//! #[via(Intermediate)]
+//! struct FrenchToast {
+//!     ingredient: String,
+//! }
+//! 
+//! #[derive(Serialize)]
+//! struct Intermediate {
+//!     val: String,
+//! }
+//! 
+//! impl Into<Intermediate> for FrenchToast {
+//!     fn into(self) -> Intermediate {
+//!         Intermediate { val: self.ingredient }
+//!     }
+//! }
+//! 
+//! let v: FrenchToast =  FrenchToast{ingredient:"Butter".to_owned()};
+//! let ser = serde_json::to_string(&v).unwrap();
+//! assert_eq!(ser, "{\"val\":\"Butter\"}")
+//! ```
+//!
+//! Try `cargo run --examples serialise`
 
 extern crate serde;
 
