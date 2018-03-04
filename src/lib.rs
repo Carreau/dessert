@@ -48,24 +48,24 @@
 //! ```rust, ignore
 //! // proc_macro can't be tested in documentation  comments.
 //! use dessert::ViaSerialize;
-//! 
+//!
 //! #[derive(ViaSerialize, Clone,  Debug)]
 //! #[via(Intermediate)]
 //! struct FrenchToast {
 //!     ingredient: String,
 //! }
-//! 
+//!
 //! #[derive(Serialize)]
 //! struct Intermediate {
 //!     val: String,
 //! }
-//! 
+//!
 //! impl Into<Intermediate> for FrenchToast {
 //!     fn into(self) -> Intermediate {
 //!         Intermediate { val: self.ingredient }
 //!     }
 //! }
-//! 
+//!
 //! let v: FrenchToast =  FrenchToast{ingredient:"Butter".to_owned()};
 //! let ser = serde_json::to_string(&v).unwrap();
 //! assert_eq!(ser, "{\"val\":\"Butter\"}")
