@@ -1,6 +1,6 @@
 [package]
 name = "dessert-derive"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Matthias Bussonnier <bussonniermatthias@gmail.com>"]
 license = "MIT"
 description = "see the Dessert crate"
