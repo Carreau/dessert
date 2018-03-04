@@ -72,6 +72,11 @@
 //! ```
 //!
 //! Try `cargo run --examples serialise`
+//!
+//!
+
+#![doc(html_logo_url = "https://raw.githubusercontent.com/Carreau/dessert/master/assets/dessert.png",
+       html_favicon_url = "https://raw.githubusercontent.com/Carreau/dessert/master/assets/dessert.png")]
 
 extern crate serde;
 
