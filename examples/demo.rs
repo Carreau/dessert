@@ -1,6 +1,6 @@
+extern crate dessert;
 #[macro_use]
 extern crate dessert_derive;
-extern crate dessert;
 extern crate serde;
 extern crate serde_json;
 
@@ -8,7 +8,6 @@ extern crate serde_json;
 extern crate serde_derive;
 
 use dessert::{ViaDeserialize, ViaSerialize};
-
 
 #[derive(ViaDeserialize, ViaSerialize, Debug, Clone)]
 #[via(Intermediate)]
@@ -29,10 +28,11 @@ impl From<Intermediate> for FrenchToast {
 
 impl Into<Intermediate> for FrenchToast {
     fn into(self) -> Intermediate {
-        Intermediate{ val: self.ingredient}
+        Intermediate {
+            val: self.ingredient,
+        }
     }
 }
-
 
 // impl From<FrenchToast> for Intermediate {
 //      fn from(ft:FrenchToast) -> Self {
@@ -41,15 +41,13 @@ impl Into<Intermediate> for FrenchToast {
 // }
 
 #[test]
-fn test_main() -> (){
+fn test_main() -> () {
     main()
 }
 
 fn main() -> () {
-    let serialized_string= "{\"val\":\"Butter\"}";
+    let serialized_string = "{\"val\":\"Butter\"}";
     let v: FrenchToast = serde_json::from_str(serialized_string).unwrap();
     println!("Serialized form: {}", serde_json::to_string(&v).unwrap());
     println!("Debug format : {:?}", v)
-
 }
-
