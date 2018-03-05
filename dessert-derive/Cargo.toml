@@ -1,9 +1,9 @@
 [package]
 name = "dessert-derive"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Matthias Bussonnier <bussonniermatthias@gmail.com>"]
 license = "MIT"
-description = "see the Dessert crate"
+description = "See the Dessert crate"
 repository = "https://github.com/carreau/dessert"
 
 [dependencies]
