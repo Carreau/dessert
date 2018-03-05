@@ -4,7 +4,7 @@ The cherry on the cake (on top of [SerDe](https://serde.rs/)) to simplify custom
 
 ## Why
 
-Writing visitor/deserialise and serialize traits can be quite annoying, and sometime you just know how to transform your struct(s) into another form that suits your need. 
+Writing visitor/deserialize and serialize traits can be quite annoying, and sometime you just know how to transform your struct(s) into another form that suits your need. 
 With dessert you just need to create an intermediate struct and the From/Into traits to convert to it, and tell dessert to use this struct as an intermediate.
 
 ## example:

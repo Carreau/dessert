@@ -1,10 +1,10 @@
 //! # Dessert
 //!
-//! A package to simplify custom SerDe Serialize/Deserialise traits. Instead of defining the traits
+//! A package to simplify custom SerDe Serialize/Deserialize traits. Instead of defining the traits
 //! Manually, define an intermediate struct/enum as well as the From and/or Into traits necessary.
 //! Desert will take care of generating the Serialize/Deserialize traits for you.
 //!
-//! ## De-Serialise
+//! ## De-Serialize
 //!
 //! For example, de-serialising by renaming a field:
 //!
@@ -35,15 +35,15 @@
 //! assert_eq!("FrenchToast { ingredient: \"Butter\" }", format!("{:?}",v))
 //! ```
 //!
-//! You can use `cargo run --example deserialise` for a full working examples
+//! You can use `cargo run --example deserialize` for a full working examples
 //!
-//! ## Serialise
+//! ## Serialize
 //!
-//! The struct you want to serialise must implement `Clone` (looking at lifting this restriction)
+//! The struct you want to serialize must implement `Clone` (looking at lifting this restriction)
 //! and should implement `Into<Intermediate>`. `Intermediate` must implement serde's `Serialize`.
 //!
 //! Use `#[derive(ViaSerialize)]` and
-//! `#[via(Intermediate)]` to automatically derive the serde `Serialise` trait.
+//! `#[via(Intermediate)]` to automatically derive the serde `Serialize` trait.
 //!
 //! ```rust, ignore
 //! // proc_macro can't be tested in documentation  comments.
@@ -71,7 +71,7 @@
 //! assert_eq!(ser, "{\"val\":\"Butter\"}")
 //! ```
 //!
-//! Try `cargo run --examples serialise`
+//! Try `cargo run --examples serialize`
 //!
 //!
 
@@ -80,10 +80,10 @@
 
 extern crate serde;
 
-/// use `#[derive(ViaDeserialize)]` to automatically implement SerDe's Deserialise traits via an
+/// use `#[derive(ViaDeserialize)]` to automatically implement SerDe's Deserialize traits via an
 /// intermediate datasctructure. Your struct must implement `From<Intermediate>`.
 pub trait ViaDeserialize {}
 
-/// use `#[derive(ViaSerialize)]` to automatically implement SerDe's Serialise traits via an
+/// use `#[derive(ViaSerialize)]` to automatically implement SerDe's Serialize traits via an
 /// intermediate datasctructure. Your struct must implement `Into<Intermediate>` and `Clone`.
 pub trait ViaSerialize {}
